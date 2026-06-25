@@ -1,33 +1,20 @@
 // HERO SLIDER
-
-const slides = document.querySelectorAll(".hero-slide");
-
-if (slides.length > 0) {
-
-    let currentSlide = 0;
-
-    function showSlide(index) {
-
-        slides.forEach(slide => {
-            slide.classList.remove("active");
-        });
-
-        slides[index].classList.add("active");
+(function() {
+    const heroSlides = document.querySelectorAll(".slide, .hero-slide");
+    if (heroSlides.length > 0) {
+        let currentSlide = 0;
+        function showSlide(index) {
+            heroSlides.forEach(slide => {
+                slide.classList.remove("active");
+            });
+            heroSlides[index].classList.add("active");
+        }
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % heroSlides.length;
+            showSlide(currentSlide);
+        }, 4000);
     }
-
-    setInterval(() => {
-
-        currentSlide = (currentSlide + 1) % slides.length;
-
-        showSlide(currentSlide);
-
-    }, 4000);
-}
-
-setInterval(() => {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-}, 4000);
+})();
 // Cart
 
 let cartCount = JSON.parse(localStorage.getItem("cart"))?.length || 0;
@@ -142,7 +129,7 @@ product.querySelector("h3").innerHTML.toLowerCase();
 if(name.includes(input)){
 
 
-product.style.display="block";
+product.style.display="";
 
 
 }
@@ -159,6 +146,7 @@ product.style.display="none";
 
 
 }
+
 // Load Admin Products
 
 
@@ -220,5 +208,19 @@ Add To Cart
 
 });
 
+=======
+// End of script
+// Show / Hide Password
+
+function togglePassword() {
+
+    let password = document.getElementById("password");
+
+    if (password.type === "password") {
+        password.type = "text";
+    } else {
+        password.type = "password";
+    }
+>>>>>>> c45eb8688a3034890c9402eda1d5f74d2660fa06
 
 }
