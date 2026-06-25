@@ -91,6 +91,30 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 </div>
 
 <script src="../script.js"></script>
+<form id="loginForm">
+  <input type="email" id="email" placeholder="Email" required>
+  <input type="password" id="password" placeholder="Password" required>
+  <button type="submit">Send OTP</button>
+</form>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    let email = document.getElementById("email").value;
+
+    let res = await fetch("http://localhost:5000/send-otp", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({ email })
+    });
+
+    if (res.ok) {
+        localStorage.setItem("email", email);
+        window.location.href = "otp.html";
+    }
+});
+</script>
 
 </body>
 </html>
