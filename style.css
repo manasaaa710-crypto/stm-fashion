@@ -252,186 +252,228 @@ body{
     border-radius:20px;
     box-shadow:0 20px 50px rgba(0,0,0,.12);
 }
+/* PRODUCTS SECTION */
 
-/* LOGIN PAGE */
+.products{
 
-.login-container{
-
-height:100vh;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-background:#f8f8f8;
-
-padding:20px;
+    padding:80px 8%;
+    background:#f7f7f7;
 
 }
 
-.login-card{
 
-width:420px;
+.products h2{
 
-background:white;
+    text-align:center;
+    font-size:40px;
+    margin-bottom:50px;
+    color:#111;
 
-padding:40px;
+}
 
-border-radius:20px;
 
-box-shadow:0 10px 40px rgba(0,0,0,.08);
+
+.product-grid{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+
+}
+
+
+
+.product-card{
+
+    background:#fff;
+    padding:20px;
+    border-radius:25px;
+    text-align:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+
+    transition:.3s;
+
+}
+
+
+
+.product-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+
+.product-card img{
+
+    width:100%;
+    height:300px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+}
+
+
+
+.product-card h3{
+
+    margin-top:20px;
+    font-size:22px;
+
+}
+
+
+
+.product-card p{
+
+    color:#C9A227;
+    font-size:20px;
+    font-weight:600;
+
+}
+
+
+
+.product-card button{
+
+    margin-top:15px;
+
+    padding:12px 20px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#111;
+
+    color:white;
+
+    cursor:pointer;
+
+}
+
+
+
+.product-card button:hover{
+
+    background:#C9A227;
+
+}
+
+
+
+/* Mobile */
+
+@media(max-width:900px){
+
+
+.product-grid{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+
+}
+
+
+@media(max-width:600px){
+
+
+.product-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+.hero-content h1{
+
+font-size:45px;
+
+}
+
+
+.navbar{
+
+padding:0 20px;
+
+}
+
+}
+.wish-icon span{
+
+position:relative;
+
+top:-8px;
+right:-10px;
+
+width:18px;
+height:18px;
+
+border-radius:50%;
+
+background:#C9A227;
+
+color:white;
+
+font-size:11px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+}
+/* FOOTER */
+
+footer{
+
+background:#111;
+
+color:white;
+
+padding:50px 8%;
 
 text-align:center;
 
 }
 
-.login-logo{
 
-height:80px;
-
-margin-bottom:20px;
-
-}
-
-.login-card h1{
-
-color:#111;
-margin-bottom:10px;
-
-}
-
-.login-card p{
-
-color:#777;
-margin-bottom:30px;
-
-}
-
-.input-box{
-
-position:relative;
-
-margin-bottom:20px;
-
-}
-
-.input-box input{
-
-width:100%;
-
-padding:15px 45px;
-
-border:1px solid #ddd;
-
-border-radius:12px;
-
-outline:none;
-
-font-size:15px;
-
-}
-
-.input-box .fa-envelope,
-.input-box .fa-lock{
-
-position:absolute;
-
-left:15px;
-top:50%;
-
-transform:translateY(-50%);
-
-color:#777;
-
-}
-
-.eye{
-
-position:absolute;
-
-right:15px;
-top:50%;
-
-transform:translateY(-50%);
-
-cursor:pointer;
-
-}
-
-.options{
-
-display:flex;
-
-justify-content:space-between;
-
-font-size:14px;
-
-margin-bottom:20px;
-
-}
-
-.options a{
+.footer-content h2{
 
 color:#C9A227;
-text-decoration:none;
-
-}
-
-.login-btn{
-
-width:100%;
-
-padding:15px;
-
-background:#C9A227;
-
-border:none;
-
-color:white;
-
-font-size:16px;
-
-border-radius:12px;
-
-cursor:pointer;
 
 margin-bottom:15px;
 
 }
 
-.login-btn:hover{
 
-opacity:.9;
+.footer-links{
 
-}
-
-.google-btn{
-
-width:100%;
-
-padding:15px;
-
-border:1px solid #ddd;
-
-background:white;
-
-border-radius:12px;
-
-cursor:pointer;
+margin:25px 0;
 
 }
 
-.signup-link{
 
-margin-top:20px;
+.footer-links a{
 
-}
+color:white;
 
-.signup-link a{
-
-color:#C9A227;
 text-decoration:none;
 
-font-weight:600;
+margin:15px;
+
+}
+
+
+.social i{
+
+font-size:25px;
+
+margin:10px;
 
 }
