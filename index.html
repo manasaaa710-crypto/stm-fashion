@@ -160,32 +160,5 @@
 
 </section>
 
-<!-- SCRIPT -->
-
-<script src="script.js"></script>
-<h2>Enter OTP</h2>
-
-<input type="text" id="otp" placeholder="Enter OTP">
-<button onclick="verifyOtp()">Verify</button>
-
-<script>
-async function verifyOtp() {
-    let email = localStorage.getItem("email");
-    let otp = document.getElementById("otp").value;
-
-    let res = await fetch("http://localhost:5000/verify-otp", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({ email, otp })
-    });
-
-    if (res.ok) {
-        window.location.href = "dashboard.html";
-    } else {
-        alert("Invalid OTP");
-    }
-}
-</script>
-
 </body>
 </html>
