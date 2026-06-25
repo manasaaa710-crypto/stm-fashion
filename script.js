@@ -1,67 +1,37 @@
-const slides = document.querySelectorAll(".slide");
+// HERO SLIDER
 
-let current = 0;
+const slides = document.querySelectorAll(".hero-slide");
 
-function showSlide(index) {
+if (slides.length > 0) {
 
-    slides.forEach(slide => {
-        slide.classList.remove("active");
-    });
+    let currentSlide = 0;
 
-    slides[index].classList.add("active");
-}
+    function showSlide(index) {
 
-setInterval(() => {
+        slides.forEach(slide => {
+            slide.classList.remove("active");
+        });
 
-    current++;
-
-    if (current >= slides.length) {
-        current = 0;
+        slides[index].classList.add("active");
     }
 
-    showSlide(current);
+    setInterval(() => {
 
-}, 4000);
+        currentSlide = (currentSlide + 1) % slides.length;
+
+        showSlide(currentSlide);
+
+    }, 4000);
+}
+
+
+// LOGIN PAGE PASSWORD TOGGLE
+
 function togglePassword() {
 
     let password = document.getElementById("password");
 
-    if (password.type === "password") {
-        password.type = "text";
-    } else {
-        password.type = "password";
-    }
-
-}
-const slides = document.querySelectorAll(".slide");
-
-let current = 0;
-
-function showSlide(index) {
-
-    slides.forEach(slide => {
-        slide.classList.remove("active");
-    });
-
-    slides[index].classList.add("active");
-}
-
-setInterval(() => {
-
-    current++;
-
-    if (current >= slides.length) {
-        current = 0;
-    }
-
-    showSlide(current);
-
-}, 4000);
-
-
-function togglePassword() {
-
-    let password = document.getElementById("password");
+    if (!password) return;
 
     if (password.type === "password") {
         password.type = "text";
