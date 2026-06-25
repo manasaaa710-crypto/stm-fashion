@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>My Profile</title>
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="navbar">
+
+<div class="logo">
+
+<img src="../images/logo.png">
+
+</div>
+
+
+<h2>My Profile</h2>
+
+
+</header>
+
+
+
+<section class="products">
+
+
+<div class="product-card">
+
+
+<h2>👤 User Profile</h2>
+
+<p id="username"></p>
+
+
+<p id="email"></p>
+
+<a href="orders.html">
+
+My Orders
+
+</a>
+<p id="cart-count-profile"></p>
+
+<p id="wishlist-count-profile"></p>
+
+
+<button onclick="logout()">
+
+Logout
+
+</button>
+
+
+</div>
+
+
+</section>
+<script>
+
+
+let user =
+JSON.parse(localStorage.getItem("user"));
+
+
+
+if(user){
+
+
+document.getElementById("username").innerHTML =
+"Name : " + user.name;
+
+
+
+document.getElementById("email").innerHTML =
+"Email : " + user.email;
+
+
+}
+let cart =
+JSON.parse(localStorage.getItem("cart")) || [];
+
+
+let wishlist =
+JSON.parse(localStorage.getItem("wishlist")) || [];
+
+
+
+document.getElementById("cart-count-profile").innerHTML =
+"Cart Items : " + cart.length;
+
+
+
+document.getElementById("wishlist-count-profile").innerHTML =
+"Wishlist Items : " + wishlist.length;
+
+
+
+function logout(){
+
+
+alert("Logged out");
+
+
+localStorage.removeItem("login");
+
+
+window.location.href="../index.html";
+
+
+}
+
+
+</script>
+</body>
+</html>
+
+

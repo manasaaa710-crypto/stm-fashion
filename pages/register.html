@@ -4,7 +4,7 @@
 
 <head>
 
-<title>Login</title>
+<title>Register</title>
 
 <link rel="stylesheet" href="../style.css">
 
@@ -20,11 +20,18 @@
 <div class="product-card">
 
 
-<h2>Login</h2>
+<h2>Register</h2>
 
 
 <input 
-type="email"
+id="name"
+placeholder="Name">
+
+
+<br><br>
+
+
+<input 
 id="email"
 placeholder="Email">
 
@@ -33,37 +40,25 @@ placeholder="Email">
 
 
 <input 
-type="password"
 id="password"
+type="password"
 placeholder="Password">
 
 
 <br><br>
 
 
-<button onclick="login()">
+<button onclick="register()">
 
-Login
+Create Account
 
 </button>
-
-
-<p>
-
-New user?
-
-<a href="register.html">
-Register
-</a>
-
-</p>
 
 
 </div>
 
 
 </section>
-
 
 
 <script src="auth.js"></script>

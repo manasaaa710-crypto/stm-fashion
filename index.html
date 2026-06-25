@@ -28,11 +28,12 @@
     <nav>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="pages/men.html">Men</a></li>
-          <li><a href="pages/women.html">Women</a></li>
-          <li><a href="pages/shoes.html">Shoes</a></li>
-          <li><a href="pages/watches.html">Watches</a></li>
-          <li><a href="pages/accessories.html">Accessories</a></li> 
+          <li><a href="mens.html">Men</a></li>
+          <li><a href="women.html">Women</a></li>
+          <li><a href="shoes.html">Shoes</a></li>
+          <li><a href="watch.html">Watches</a></li>
+          <li><a href="accessories.html">Accessories</a></li> 
+          <li><a href="admin.html">Admin</a></li>
         </ul>
     </nav>
 
@@ -48,7 +49,7 @@
         </div>
 
          <!-- Login -->
-    <a href="pages/login.html" title="Login">
+    <a href="pages/profile.html" title="Login">
         <i class="fa-regular fa-user"></i>
     </a>
 
@@ -171,7 +172,16 @@
 
 <h2>Featured Products</h2>
 
-<div class="product-grid">
+
+<div 
+id="home-products"
+class="product-grid">
+
+
+</div>
+
+
+</section>
 
 
 <div class="product-card">
@@ -293,29 +303,7 @@ Premium fashion store for modern style
 
 </footer>
 <script src="script.js"></script>
-<h2>Enter OTP</h2>
 
-<input type="text" id="otp" placeholder="Enter OTP">
-<button onclick="verifyOtp()">Verify</button>
-
-<script>
-async function verifyOtp() {
-    let email = localStorage.getItem("email");
-    let otp = document.getElementById("otp").value;
-
-    let res = await fetch("http://localhost:5000/verify-otp", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({ email, otp })
-    });
-
-    if (res.ok) {
-        window.location.href = "dashboard.html";
-    } else {
-        alert("Invalid OTP");
-    }
-}
-</script>
 
 </body>
 

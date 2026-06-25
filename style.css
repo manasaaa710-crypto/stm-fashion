@@ -477,3 +477,30 @@ font-size:25px;
 margin:10px;
 
 }
+.admin-panel{
+
+display:flex;
+gap:30px;
+padding:50px;
+
+}
+
+
+.admin-card{
+
+width:250px;
+height:150px;
+background:white;
+box-shadow:0 5px 20px #ddd;
+border-radius:20px;
+text-align:center;
+padding:20px;
+
+}
+
+
+.admin-card h1{
+
+font-size:45px;
+
+}

@@ -70,21 +70,45 @@ let checkoutBtn =
 document.getElementById("checkout");
 
 
-if(checkoutBtn){
+if(checkoutBtn)
 
 
 checkoutBtn.onclick = function(){
 
 
+let orders =
+JSON.parse(localStorage.getItem("orders")) || [];
+
+
+
+orders.push({
+
+items: cart,
+
+date: new Date().toLocaleString(),
+
+total: total
+
+});
+
+
+
+localStorage.setItem(
+"orders",
+JSON.stringify(orders)
+);
+
+
+
 alert("Order placed successfully 🎉");
+
 
 
 localStorage.removeItem("cart");
 
 
-window.location.href="../index.html";
 
+window.location.href="../pages/orders.html";
 
-}
 
 }
