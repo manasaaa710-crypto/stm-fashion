@@ -27,13 +27,12 @@
     <!-- Navigation -->
     <nav>
         <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Men</a></li>
-            <li><a href="#">Women</a></li>
-            <li><a href="#">Shoes</a></li>
-            <li><a href="#">Watches</a></li>
-            <li><a href="#">Accessories</a></li>
-            <li><a href="#" class="sale">Sale</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="pages/men.html">Men</a></li>
+          <li><a href="pages/women.html">Women</a></li>
+          <li><a href="pages/shoes.html">Shoes</a></li>
+          <li><a href="pages/watches.html">Watches</a></li>
+          <li><a href="pages/accessories.html">Accessories</a></li> 
         </ul>
     </nav>
 
@@ -43,22 +42,29 @@
         <!-- Search -->
         <div class="search-box">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" placeholder="Search products">
+            <input 
+                type="text" 
+                id="search"
+                placeholder="Search products"
+                onkeyup="searchProducts()">
         </div>
 
-        <!-- Icons -->
-        <a href="#" title="Login">
-            <i class="fa-regular fa-user"></i>
-        </a>
+         <!-- Login -->
+    <a href="pages/login.html" title="Login">
+        <i class="fa-regular fa-user"></i>
+    </a>
 
-        <a href="#" title="Wishlist">
-            <i class="fa-regular fa-heart"></i>
-        </a>
+    <!-- Wishlist -->
+    <a href="pages/wishlist.html" title="Wishlist" class="wish-icon">
+        <i class="fa-regular fa-heart"></i>
+        <span id="wish-count">0</span>
 
-        <a href="#" title="Cart" class="cart-icon">
-            <i class="fa-solid fa-bag-shopping"></i>
-            <span>2</span>
-        </a>
+    </a>
+    <!-- Cart -->
+    <a href="pages/cart.html" title="Cart" class="cart-icon">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span id="cart-count">0</span>
+    </a>
 
     </div>
 
@@ -118,5 +124,137 @@
     </div>
 
 </section>
+
+<!-- PRODUCTS START -->
+
+
+<section class="products">
+
+<h2>Featured Products</h2>
+
+<div class="product-grid">
+
+
+<div class="product-card">
+
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500">
+
+<h3>Premium Hoodie</h3>
+
+<p>₹1999</p>
+
+<button onclick="addCart('Premium Hoodie',1999,'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500')">
+Add To Cart
+</button>
+
+<button onclick="addWishlist('Premium Hoodie',1999,'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500')">
+♡ Wishlist
+</button>
+
+</div>
+
+
+
+
+<div class="product-card">
+
+<img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500">
+
+
+<h3>Luxury Watch</h3>
+
+<p>₹4999</p>
+
+<button onclick="addCart('Luxury Watch',4999,'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500')">
+Add To Cart
+</button>
+
+<button onclick="addWishlist('Luxury Watch',4999,'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500')">
+♡ Wishlist
+</button>
+
+</div>
+
+
+
+
+<div class="product-card">
+
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500">
+
+
+<h3>Running Shoes</h3>
+
+<p>₹2999</p>
+
+<button onclick="addCart('Running Shoes',2999,'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500')">
+Add To Cart
+</button>
+
+<button onclick="addWishlist('Running Shoes',2999,'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500')">
+♡ Wishlist
+</button>
+
+</div>
+
+
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="footer-content">
+
+
+<h2>STM Studio</h2>
+
+
+<p>
+Premium fashion store for modern style
+</p>
+
+
+<div class="footer-links">
+
+
+<a href="index.html">Home</a>
+
+<a href="pages/men.html">Men</a>
+
+<a href="pages/women.html">Women</a>
+
+<a href="pages/cart.html">Cart</a>
+
+
+</div>
+
+
+<div class="social">
+
+
+<i class="fab fa-instagram"></i>
+
+<i class="fab fa-facebook"></i>
+
+<i class="fab fa-twitter"></i>
+
+
+</div>
+
+
+<p>
+© 2026 STM Studio | All Rights Reserved
+</p>
+
+
+</div>
+
+
+</footer>
+<script src="script.js"></script>
+
 </body>
+
 </html>
