@@ -1,57 +1,81 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-
-<title>Orders</title>
-
-<link rel="stylesheet" href="../style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders | STM Studio</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
-
-
 <body>
 
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../images/logo.png" alt="STM Studio Logo">
+            </a>
+        </div>
 
-<header class="navbar">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="men.html">Men</a></li>
+                <li><a href="women.html">Women</a></li>
+                <li><a href="shoes.html">Shoes</a></li>
+                <li><a href="watches.html">Watches</a></li>
+                <li><a href="accessories.html">Accessories</a></li> 
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+        </nav>
 
-<h2>
-My Orders
-</h2>
+        <div class="nav-right">
+            <a href="profile.html" title="Profile">
+                <i class="fa-regular fa-user"></i>
+            </a>
 
+            <a href="wishlist.html" title="Wishlist" class="wish-icon">
+                <i class="fa-regular fa-heart"></i>
+                <span id="wish-count">0</span>
+            </a>
 
-<a href="../index.html">
-Home
-</a>
+            <a href="cart.html" title="Cart" class="cart-icon">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span id="cart-count">0</span>
+            </a>
+        </div>
+    </header>
 
+    <section class="products">
+        <h2 style="text-align:center; margin-bottom:40px; text-transform: uppercase; letter-spacing: 2px;">Order History</h2>
+        <div id="order-list" class="product-grid">
+            <!-- Orders listed here -->
+        </div>
+    </section>
 
-</header>
+    <footer>
+        <div class="footer-content">
+            <h2>STM Studio</h2>
+            <p>Premium fashion store for modern style</p>
+            <div class="footer-links">
+                <a href="../index.html">Home</a>
+                <a href="men.html">Men</a>
+                <a href="women.html">Women</a>
+                <a href="cart.html">Cart</a>
+            </div>
+            <div class="social">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+            </div>
+            <p>© 2026 STM Studio | All Rights Reserved</p>
+        </div>
+    </footer>
 
-
-
-
-<section class="products">
-
-
-<h2>Order History</h2>
-
-
-<div 
-id="order-list"
-class="product-grid">
-
-
-</div>
-
-
-</section>
-
-
-
-<script src="orders.js"></script>
-
-
+    <script src="orders.js"></script>
+    <script src="../script.js"></script>
 </body>
-
 </html>

@@ -1,56 +1,124 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-
-<title>Shoes</title>
-
-<link rel="stylesheet" href="../style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoes Collection | STM Studio</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
-
-
 <body>
 
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../images/logo.png" alt="STM Studio Logo">
+            </a>
+        </div>
 
-<h1 style="text-align:center">
-Shoes Collection
-</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="men.html">Men</a></li>
+                <li><a href="women.html">Women</a></li>
+                <li><a href="shoes.html" class="active">Shoes</a></li>
+                <li><a href="watches.html">Watches</a></li>
+                <li><a href="accessories.html">Accessories</a></li> 
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+        </nav>
 
+        <div class="nav-right">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input 
+                    type="text" 
+                    id="search"
+                    placeholder="Search products"
+                    onkeyup="searchProducts()">
+            </div>
 
-<section class="products">
+            <a href="profile.html" title="Profile">
+                <i class="fa-regular fa-user"></i>
+            </a>
 
+            <a href="wishlist.html" title="Wishlist" class="wish-icon">
+                <i class="fa-regular fa-heart"></i>
+                <span id="wish-count">0</span>
+            </a>
 
-<div class="product-grid">
+            <a href="cart.html" title="Cart" class="cart-icon">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span id="cart-count">0</span>
+            </a>
+        </div>
+    </header>
 
+    <h1 style="text-align:center; margin-top: 40px; text-transform: uppercase; letter-spacing: 2px;">Shoes Collection</h1>
 
-<div class="product-card">
+    <section class="products">
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500" alt="Running Shoes">
+                <h3>Running Shoes</h3>
+                <p>₹2999</p>
+                <button onclick="addCart('Running Shoes', 2999, 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500')">
+                    Add To Cart
+                </button>
+                <button onclick="addWishlist('Running Shoes', 2999, 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500')">
+                    ♡ Wishlist
+                </button>
+            </div>
 
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500" alt="Sneakers">
+                <h3>Classic Sneakers</h3>
+                <p>₹3499</p>
+                <button onclick="addCart('Classic Sneakers', 3499, 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500')">
+                    Add To Cart
+                </button>
+                <button onclick="addWishlist('Classic Sneakers', 3499, 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500')">
+                    ♡ Wishlist
+                </button>
+            </div>
 
-<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=500" alt="Leather Shoes">
+                <h3>Formal Leather Shoes</h3>
+                <p>₹4500</p>
+                <button onclick="addCart('Formal Leather Shoes', 4500, 'https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=500')">
+                    Add To Cart
+                </button>
+                <button onclick="addWishlist('Formal Leather Shoes', 4500, 'https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=500')">
+                    ♡ Wishlist
+                </button>
+            </div>
+        </div>
+    </section>
 
+    <footer>
+        <div class="footer-content">
+            <h2>STM Studio</h2>
+            <p>Premium fashion store for modern style</p>
+            <div class="footer-links">
+                <a href="../index.html">Home</a>
+                <a href="men.html">Men</a>
+                <a href="women.html">Women</a>
+                <a href="cart.html">Cart</a>
+            </div>
+            <div class="social">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+            </div>
+            <p>© 2026 STM Studio | All Rights Reserved</p>
+        </div>
+    </footer>
 
-<h3>Running Shoes</h3>
-
-<p>₹2999</p>
-
-
-<button onclick="addCart('Running Shoes',2999,'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500')">
-
-Add To Cart
-
-</button>
-
-</div>
-
-
-</div>
-
-
-</section>
-
-<script src="../script.js"></script>
+    <script src="../script.js"></script>
 </body>
-
 </html>

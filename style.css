@@ -524,9 +524,7 @@ padding:20px;
 
 .admin-card h1{
 
-font-size:45px;
-
-=======
+font-size:45px
 .hero-slider{
     position:relative;
     width:100%;
@@ -1368,5 +1366,463 @@ font-size:45px;
     position: absolute;
     inset: 0;
     background: rgba(0,0,0,0.35);
->>>>>>> c45eb8688a3034890c9402eda1d5f74d2660fa06
 }
+
+/* ================= AUTHENTICATION PAGES ================= */
+.auth-container {
+    max-width: 450px;
+    margin: 60px auto;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+    text-align: center;
+    border: 1px solid #f0f0f0;
+}
+
+.auth-container h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 30px;
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-box i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 16px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 14px 15px 14px 45px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    background: #fdfdfd;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-box input:focus {
+    border-color: #C9A227;
+    background: #fff;
+    box-shadow: 0 0 8px rgba(201, 162, 39, 0.15);
+}
+
+.input-box .eye {
+    position: absolute;
+    right: 15px;
+    left: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s;
+}
+
+.input-box .eye:hover {
+    color: #C9A227;
+}
+
+.auth-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.auth-options label {
+    cursor: pointer;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.auth-options a {
+    color: #C9A227;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.auth-options a:hover {
+    color: #111;
+}
+
+.login-btn, .register-btn {
+    width: 100%;
+    padding: 14px;
+    background: #111;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.login-btn:hover, .register-btn:hover {
+    background: #C9A227;
+}
+
+.google-btn {
+    width: 100%;
+    padding: 14px;
+    background: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s;
+}
+
+.google-btn:hover {
+    background: #f9f9f9;
+    border-color: #ccc;
+}
+
+.auth-redirect {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.auth-redirect a {
+    color: #C9A227;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-redirect a:hover {
+    text-decoration: underline;
+}
+
+/* ================= CART QUANTITY CONTROLS ================= */
+.cart-qty-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 15px 0;
+}
+
+.qty-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    background: #fff;
+    color: #111;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.qty-btn:hover {
+    background: #111;
+    color: #fff;
+    border-color: #111;
+}
+
+.qty-val {
+    font-size: 16px;
+    font-weight: 600;
+    min-width: 20px;
+    text-align: center;
+}
+
+.checkout-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+#checkout {
+    background: #C9A227;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 20px;
+}
+
+#checkout:hover {
+    background: #111;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* ================= PROFILE PAGE STYLING ================= */
+.profile-card {
+    max-width: 500px;
+    margin: 50px auto;
+    background: #fff;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    text-align: center;
+}
+
+.profile-avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: rgba(201, 162, 39, 0.1);
+    color: #C9A227;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    margin: 0 auto 20px;
+}
+
+.profile-details-list {
+    text-align: left;
+    margin: 25px 0;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 20px 0;
+}
+
+.profile-detail-item {
+    margin-bottom: 15px;
+    font-size: 15px;
+    color: #444;
+}
+
+.profile-detail-item strong {
+    color: #111;
+    display: inline-block;
+    width: 120px;
+}
+
+.profile-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.btn-profile-edit {
+    background: #fff;
+    color: #111;
+    border: 1px solid #111;
+    padding: 12px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-profile-edit:hover {
+    background: #111;
+    color: #fff;
+}
+
+.btn-profile-logout {
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-profile-logout:hover {
+    background: #c0392b;
+}
+
+.profile-edit-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+}
+
+.profile-edit-form input:focus {
+    border-color: #C9A227;
+}
+
+/* ================= ADMIN MANAGEMENT STYLING ================= */
+.admin-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.admin-stat-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+    border-top: 4px solid #C9A227;
+}
+
+.admin-stat-card h2 {
+    font-size: 36px;
+    color: #111;
+    margin-bottom: 5px;
+}
+
+.admin-stat-card p {
+    color: #666;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.admin-form-container {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+}
+
+.admin-form-container h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    border-bottom: 2px solid #f5f5f5;
+    padding-bottom: 10px;
+    color: #111;
+}
+
+.admin-form-container input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+}
+
+.admin-form-container input:focus {
+    border-color: #C9A227;
+}
+
+.admin-form-container button {
+    background: #C9A227;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.admin-form-container button:hover {
+    background: #111;
+}
+
+/* Edit Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    position: relative;
+    animation: modalSlide 0.3s ease-out;
+}
+
+@keyframes modalSlide {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+}
+
+.modal-close:hover {
+    color: #111;
+}
+
+.admin-btn-edit {
+    background: #f39c12 !important;
+    margin-right: 8px;
+}
+
+.admin-btn-edit:hover {
+    background: #d35400 !important;
+}
+
+.admin-btn-delete {
+    background: #e74c3c !important;
+}
+
+.admin-btn-delete:hover {
+    background: #c0392b !important;
+}
+
+/* ================= EXTRA UX POLISH ================= */
+.success-banner {
+    background: #2ecc71;
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}

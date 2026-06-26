@@ -1,135 +1,93 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-
-<title>Admin Panel</title>
-
-<link rel="stylesheet" href="../style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | STM Studio</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
-
-
 <body>
 
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../images/logo.png" alt="STM Studio Logo">
+            </a>
+        </div>
+        <h2>Admin Panel</h2>
+        <a href="../index.html" class="btn-profile-edit" style="text-decoration: none; padding: 8px 20px;">Home</a>
+    </header>
 
-<header class="navbar">
+    <!-- Dashboard Statistics -->
+    <div class="admin-stats-grid">
+        <div class="admin-stat-card">
+            <h2 id="product-count">0</h2>
+            <p>Products</p>
+        </div>
+        <div class="admin-stat-card">
+            <h2 id="order-count">0</h2>
+            <p>Orders</p>
+        </div>
+        <div class="admin-stat-card">
+            <h2 id="user-count">0</h2>
+            <p>Users</p>
+        </div>
+    </div>
 
-<h2>Admin Panel</h2>
+    <section class="products" style="padding-top: 20px;">
+        <!-- Add Product Section -->
+        <div class="admin-form-container">
+            <h2>Add Product</h2>
+            <form onsubmit="event.preventDefault(); addProduct();">
+                <input type="text" id="pname" placeholder="Product Name" required>
+                <input type="number" id="pprice" placeholder="Price (₹)" required>
+                <input type="url" id="pimage" placeholder="Image URL (e.g. Unsplash URL)" required>
+                <button type="submit">Add Product</button>
+            </form>
+        </div>
 
-<a href="../index.html">
-Home
-</a>
+        <!-- Product List Section -->
+        <h2 style="text-align:center; margin: 40px 0 20px; text-transform: uppercase; letter-spacing: 2px;">Product Management</h2>
+        
+        <div id="admin-products" class="product-grid">
+            <!-- Products listed here -->
+        </div>
+    </section>
 
-</header>
+    <!-- Edit Product Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeEditModal()">&times;</span>
+            <h2>Edit Product</h2>
+            <form onsubmit="event.preventDefault(); saveEditProduct();">
+                <input type="hidden" id="edit-index">
+                
+                <label style="font-weight: 500; font-size: 13px; color: #555;">Product Name:</label>
+                <input type="text" id="edit-pname" required style="width:100%; padding:10px; margin-bottom:15px; border:1px solid #ddd; border-radius:4px;">
+                
+                <label style="font-weight: 500; font-size: 13px; color: #555;">Price (₹):</label>
+                <input type="number" id="edit-pprice" required style="width:100%; padding:10px; margin-bottom:15px; border:1px solid #ddd; border-radius:4px;">
+                
+                <label style="font-weight: 500; font-size: 13px; color: #555;">Image URL:</label>
+                <input type="url" id="edit-pimage" required style="width:100%; padding:10px; margin-bottom:20px; border:1px solid #ddd; border-radius:4px;">
+                
+                <button type="submit" class="login-btn" style="margin-bottom:0;">Save Changes</button>
+            </form>
+        </div>
+    </div>
 
-<div class="product-grid">
+    <footer>
+        <div class="footer-content">
+            <h2>STM Studio</h2>
+            <p>© 2026 STM Studio | Admin Portal</p>
+        </div>
+    </footer>
 
-
-<div class="product-card">
-
-<h2 id="product-count">
-0
-</h2>
-
-<p>
-Products
-</p>
-
-</div>
-
-
-
-<div class="product-card">
-
-<h2 id="order-count">
-0
-</h2>
-
-<p>
-Orders
-</p>
-
-</div>
-
-
-
-<div class="product-card">
-
-<h2 id="user-count">
-0
-</h2>
-
-<p>
-Users
-</p>
-
-</div>
-
-
-</div>
-
-<section class="products">
-
-
-<div class="product-card">
-
-
-<h2>Add Product</h2>
-
-
-<input 
-id="pname"
-placeholder="Product Name">
-
-
-<br><br>
-
-
-<input 
-id="pprice"
-placeholder="Price">
-
-
-<br><br>
-
-
-<input 
-id="pimage"
-placeholder="Image URL">
-
-
-<br><br>
-
-
-<button onclick="addProduct()">
-
-Add Product
-
-</button>
-
-
-</div>
-
-
-
-<h2>Products</h2>
-
-
-<div 
-id="admin-products"
-class="product-grid">
-
-</div>
-
-
-</section>
-
-
-
-<script src="admin.js"></script>
-
-
+    <script src="admin.js"></script>
 </body>
-
 </html>

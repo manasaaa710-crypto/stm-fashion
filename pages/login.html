@@ -1,137 +1,68 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-
-<title>Login</title>
-
-<link rel="stylesheet" href="../style.css">
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | STM Studio</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
-
-
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-</head>
-
-
 <body>
 
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../images/logo.png" alt="STM Studio Logo">
+            </a>
+        </div>
+        <h2>STM Studio</h2>
+        <a href="../index.html" class="btn-profile-edit" style="text-decoration: none; padding: 8px 20px;">Home</a>
+    </header>
 
-<section class="products">
-
-<<<<<<< HEAD
-=======
-        <img src="../images/logo.png" alt="STM Studio Logo" class="login-logo">
->>>>>>> c45eb8688a3034890c9402eda1d5f74d2660fa06
-
-<div class="product-card">
-
-
-<<<<<<< HEAD
-<h2>Login</h2>
-
-
-<input 
-type="email"
-id="email"
-placeholder="Email">
-=======
-        <form id="loginForm">
-
+    <div class="auth-container">
+        <h2>Login</h2>
+        
+        <form id="loginForm" onsubmit="event.preventDefault(); login();">
             <!-- Email -->
-
             <div class="input-box">
-
                 <i class="fa-solid fa-envelope"></i>
-
-                <input
-                type="email"
-                id="email"
-                placeholder="Email Address"
-                required>
-
+                <input type="email" id="email" placeholder="Email Address" required>
             </div>
 
             <!-- Password -->
-
             <div class="input-box">
-
                 <i class="fa-solid fa-lock"></i>
->>>>>>> c45eb8688a3034890c9402eda1d5f74d2660fa06
+                <input type="password" id="password" placeholder="Password" required>
+                <i class="fa-solid fa-eye eye" onclick="togglePassword()"></i>
+            </div>
 
+            <!-- Remember Me and Forgot Password -->
+            <div class="auth-options">
+                <label>
+                    <input type="checkbox" id="remember-me"> Remember Me
+                </label>
+                <a href="#" id="forgot-password" onclick="forgotPassword(); return false;">Forgot Password?</a>
+            </div>
 
-<<<<<<< HEAD
-<br><br>
-=======
-                <i
-                class="fa-solid fa-eye eye"
-                onclick="togglePassword()"></i>
->>>>>>> c45eb8688a3034890c9402eda1d5f74d2660fa06
+            <!-- Login Button -->
+            <button type="submit" class="login-btn">Login</button>
+        </form>
 
+        <button type="button" class="google-btn">
+            <i class="fa-brands fa-google"></i>
+            Continue with Google
+        </button>
 
-<input 
-type="password"
-id="password"
-placeholder="Password">
+        <div class="auth-redirect">
+            New user? <a href="register.html">Register here</a>
+        </div>
+    </div>
 
-
-<br><br>
-
-
-<<<<<<< HEAD
-<button onclick="login()">
-
-Login
-
-</button>
-
-=======
-            <button
-            type="submit"
-            class="login-btn">
-            Login
-            </button>
-
-            <button
-            type="button"
-            class="google-btn">
-
-                <i class="fa-brands fa-google"></i>
-                Continue with Google
->>>>>>> c45eb8688a3034890c9402eda1d5f74d2660fa06
-
-<p>
-
-New user?
-
-<a href="register.html">
-Register
-</a>
-
-</p>
-
-
-</div>
-
-<<<<<<< HEAD
-
-</section>
-
-
-
-<script src="auth.js"></script>
-
-=======
-<script src="../script.js"></script>
->>>>>>> c45eb8688a3034890c9402eda1d5f74d2660fa06
-
+    <script src="auth.js"></script>
+    <script src="../script.js"></script>
 </body>
-
-
 </html>

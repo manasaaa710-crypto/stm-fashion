@@ -1,70 +1,78 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-
-<title>Register</title>
-
-<link rel="stylesheet" href="../style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | STM Studio</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
-
-
 <body>
 
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../images/logo.png" alt="STM Studio Logo">
+            </a>
+        </div>
+        <h2>STM Studio</h2>
+        <a href="../index.html" class="btn-profile-edit" style="text-decoration: none; padding: 8px 20px;">Home</a>
+    </header>
 
-<section class="products">
+    <div class="auth-container">
+        <h2>Register</h2>
+        
+        <!-- Success Banner (hidden by default) -->
+        <div id="successMessage" class="success-banner" style="display: none;">
+            Registration Successful! Redirecting to login...
+        </div>
 
+        <form id="registerForm" onsubmit="event.preventDefault(); register();">
+            <!-- Full Name -->
+            <div class="input-box">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" id="name" placeholder="Full Name" required>
+            </div>
 
-<div class="product-card">
+            <!-- Email -->
+            <div class="input-box">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" id="email" placeholder="Email Address" required>
+            </div>
 
+            <!-- Phone Number -->
+            <div class="input-box">
+                <i class="fa-solid fa-phone"></i>
+                <input type="tel" id="phone" placeholder="Phone Number (10 digits)" required>
+            </div>
 
-<h2>Register</h2>
+            <!-- Password -->
+            <div class="input-box">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="password" placeholder="Password (min 6 chars)" required>
+                <i class="fa-solid fa-eye eye" onclick="togglePassword()"></i>
+            </div>
 
+            <!-- Confirm Password -->
+            <div class="input-box">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+            </div>
 
-<input 
-id="name"
-placeholder="Name">
+            <!-- Register Button -->
+            <button type="submit" class="register-btn">Create Account</button>
+        </form>
 
+        <div class="auth-redirect">
+            Already have an account? <a href="login.html">Login here</a>
+        </div>
+    </div>
 
-<br><br>
-
-
-<input 
-id="email"
-placeholder="Email">
-
-
-<br><br>
-
-
-<input 
-id="password"
-type="password"
-placeholder="Password">
-
-
-<br><br>
-
-
-<button onclick="register()">
-
-Create Account
-
-</button>
-
-
-</div>
-
-
-</section>
-
-
-<script src="auth.js"></script>
-
-
+    <script src="auth.js"></script>
+    <script src="../script.js"></script>
 </body>
-
-
 </html>

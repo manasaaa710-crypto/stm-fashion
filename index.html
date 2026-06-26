@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STM Studio</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -23,25 +21,20 @@
 <header class="navbar">
 
     <div class="logo">
-        <img src="images/logo.png" alt="STM Studio Logo">
+        <a href="index.html">
+            <img src="images/logo.png" alt="STM Studio Logo">
+        </a>
     </div>
 
     <nav>
         <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html" class="active">Home</a></li>
           <li><a href="mens.html">Men</a></li>
           <li><a href="women.html">Women</a></li>
           <li><a href="shoes.html">Shoes</a></li>
-          <li><a href="watch.html">Watches</a></li>
+          <li><a href="watches.html">Watches</a></li>
           <li><a href="accessories.html">Accessories</a></li> 
-          <li><a href="admin.html">Admin</a></li>
-
-          <li><a href="pages/men.html">Mens</a></li>
-          <li><a href="pages/women.html">Women</a></li>
-          <li><a href="pages/shoes.html">Shoes</a></li>
-          <li><a href="pages/watches.html">Watches</a></li>
-          <li><a href="pages/accessories.html">Accessories</a></li> 
-
+          <li><a href="pages/admin.html">Admin</a></li>
         </ul>
     </nav>
 
@@ -127,87 +120,30 @@
 
 
 <section class="products">
-
-<h2>Featured Products</h2>
-
-
-<div 
-id="home-products"
-class="product-grid">
-
-
-</div>
-
-
-</section>
-
-
-<div class="product-card">
-
-<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500">
-
-<h3>Premium Hoodie</h3>
-
-<p>₹1999</p>
-
-<button onclick="addCart('Premium Hoodie',1999,'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500')">
-Add To Cart
-</button>
-
-<button onclick="addWishlist('Premium Hoodie',1999,'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500')">
-♡ Wishlist
-</button>
-
-</div>
-
-
-
-
-<div class="product-card">
-
-<img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500">
-
-
-<h3>Luxury Watch</h3>
-
-<p>₹4999</p>
-
-<button onclick="addCart('Luxury Watch',4999,'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500')">
-Add To Cart
-</button>
-
-<button onclick="addWishlist('Luxury Watch',4999,'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500')">
-♡ Wishlist
-</button>
-
-</div>
-
-
-
-
-<div class="product-card">
-
-<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500">
-
-
-<h3>Running Shoes</h3>
-
-<p>₹2999</p>
-
-<button onclick="addCart('Running Shoes',2999,'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500')">
-Add To Cart
-</button>
-
-<button onclick="addWishlist('Running Shoes',2999,'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500')">
-♡ Wishlist
-</button>
-
-</div>
-
-
-
-</div>
-
+    <h2>Featured Products</h2>
+    <div id="home-products" class="product-grid">
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500" alt="Premium Hoodie">
+            <h3>Premium Hoodie</h3>
+            <p>₹1999</p>
+            <button onclick="addCart('Premium Hoodie', 1999, 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500')">Add To Cart</button>
+            <button onclick="addWishlist('Premium Hoodie', 1999, 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500')">♡ Wishlist</button>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500" alt="Luxury Watch">
+            <h3>Luxury Watch</h3>
+            <p>₹4999</p>
+            <button onclick="addCart('Luxury Watch', 4999, 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500')">Add To Cart</button>
+            <button onclick="addWishlist('Luxury Watch', 4999, 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500')">♡ Wishlist</button>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500" alt="Running Shoes">
+            <h3>Running Shoes</h3>
+            <p>₹2999</p>
+            <button onclick="addCart('Running Shoes', 2999, 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500')">Add To Cart</button>
+            <button onclick="addWishlist('Running Shoes', 2999, 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500')">♡ Wishlist</button>
+        </div>
+    </div>
 </section>
 
 <footer>

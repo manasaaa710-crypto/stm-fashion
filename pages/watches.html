@@ -1,75 +1,124 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-
-<title>Watches</title>
-
-<link rel="stylesheet" href="../style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watches Collection | STM Studio</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
-
-
 <body>
 
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../images/logo.png" alt="STM Studio Logo">
+            </a>
+        </div>
 
-<header class="navbar">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="men.html">Men</a></li>
+                <li><a href="women.html">Women</a></li>
+                <li><a href="shoes.html">Shoes</a></li>
+                <li><a href="watches.html" class="active">Watches</a></li>
+                <li><a href="accessories.html">Accessories</a></li> 
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+        </nav>
 
+        <div class="nav-right">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input 
+                    type="text" 
+                    id="search"
+                    placeholder="Search products"
+                    onkeyup="searchProducts()">
+            </div>
 
-<div class="logo">
-<img src="../images/logo.png">
-</div>
+            <a href="profile.html" title="Profile">
+                <i class="fa-regular fa-user"></i>
+            </a>
 
+            <a href="wishlist.html" title="Wishlist" class="wish-icon">
+                <i class="fa-regular fa-heart"></i>
+                <span id="wish-count">0</span>
+            </a>
 
-<h2>Watches Collection</h2>
+            <a href="cart.html" title="Cart" class="cart-icon">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span id="cart-count">0</span>
+            </a>
+        </div>
+    </header>
 
+    <h1 style="text-align:center; margin-top: 40px; text-transform: uppercase; letter-spacing: 2px;">Watches Collection</h1>
 
-</header>
+    <section class="products">
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500" alt="Luxury Watch">
+                <h3>Luxury Watch</h3>
+                <p>₹4999</p>
+                <button onclick="addCart('Luxury Watch', 4999, 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500')">
+                    Add To Cart
+                </button>
+                <button onclick="addWishlist('Luxury Watch', 4999, 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500')">
+                    ♡ Wishlist
+                </button>
+            </div>
 
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=500" alt="Minimalist Watch">
+                <h3>Minimalist Watch</h3>
+                <p>₹2999</p>
+                <button onclick="addCart('Minimalist Watch', 2999, 'https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=500')">
+                    Add To Cart
+                </button>
+                <button onclick="addWishlist('Minimalist Watch', 2999, 'https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=500')">
+                    ♡ Wishlist
+                </button>
+            </div>
 
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?w=500" alt="Sports Watch">
+                <h3>Sports Watch</h3>
+                <p>₹3899</p>
+                <button onclick="addCart('Sports Watch', 3899, 'https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?w=500')">
+                    Add To Cart
+                </button>
+                <button onclick="addWishlist('Sports Watch', 3899, 'https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?w=500')">
+                    ♡ Wishlist
+                </button>
+            </div>
+        </div>
+    </section>
 
-<section class="products">
+    <footer>
+        <div class="footer-content">
+            <h2>STM Studio</h2>
+            <p>Premium fashion store for modern style</p>
+            <div class="footer-links">
+                <a href="../index.html">Home</a>
+                <a href="men.html">Men</a>
+                <a href="women.html">Women</a>
+                <a href="cart.html">Cart</a>
+            </div>
+            <div class="social">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+            </div>
+            <p>© 2026 STM Studio | All Rights Reserved</p>
+        </div>
+    </footer>
 
-
-<h2>Luxury Watches</h2>
-
-
-<div class="product-grid">
-
-
-<div class="product-card">
-
-
-<img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500">
-
-
-<h3>Luxury Watch</h3>
-
-
-<p>₹4999</p>
-
-
-<button onclick="addCart('Luxury Watch',4999,'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500')">
-
-Add To Cart
-
-</button>
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-<script src="../script.js"></script>
-
-
+    <script src="../script.js"></script>
 </body>
-
 </html>

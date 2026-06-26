@@ -1,125 +1,204 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-
-<title>My Profile</title>
-
-<link rel="stylesheet" href="../style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | STM Studio</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
-
-
 <body>
 
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../images/logo.png" alt="STM Studio Logo">
+            </a>
+        </div>
 
-<header class="navbar">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="men.html">Men</a></li>
+                <li><a href="women.html">Women</a></li>
+                <li><a href="shoes.html">Shoes</a></li>
+                <li><a href="watches.html">Watches</a></li>
+                <li><a href="accessories.html">Accessories</a></li> 
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+        </nav>
 
-<div class="logo">
+        <div class="nav-right">
+            <a href="profile.html" title="Profile" class="active">
+                <i class="fa-regular fa-user"></i>
+            </a>
 
-<img src="../images/logo.png">
+            <a href="wishlist.html" title="Wishlist" class="wish-icon">
+                <i class="fa-regular fa-heart"></i>
+                <span id="wish-count">0</span>
+            </a>
 
-</div>
+            <a href="cart.html" title="Cart" class="cart-icon">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span id="cart-count">0</span>
+            </a>
+        </div>
+    </header>
 
+    <section class="products">
+        <div class="profile-card">
+            <div class="profile-avatar">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <h2>My Profile</h2>
+            
+            <div class="profile-details-list" id="profileDisplay">
+                <div class="profile-detail-item">
+                    <strong>Full Name:</strong> <span id="display-name">N/A</span>
+                </div>
+                <div class="profile-detail-item">
+                    <strong>Email Address:</strong> <span id="display-email">N/A</span>
+                </div>
+                <div class="profile-detail-item">
+                    <strong>Phone Number:</strong> <span id="display-phone">N/A</span>
+                </div>
+                <div class="profile-detail-item">
+                    <strong>Cart Items:</strong> <span id="cart-count-profile">0</span>
+                </div>
+                <div class="profile-detail-item">
+                    <strong>Wishlist Items:</strong> <span id="wishlist-count-profile">0</span>
+                </div>
+                <div class="profile-detail-item" style="margin-top: 15px; text-align: center;">
+                    <a href="orders.html" class="btn-gold" style="text-decoration: none; padding: 6px 15px; font-size: 13px;">View Order History</a>
+                </div>
+            </div>
 
-<h2>My Profile</h2>
+            <!-- Profile Edit Form (Hidden by default) -->
+            <div class="profile-edit-form" id="profileEditForm" style="display: none; text-align: left;">
+                <label style="font-weight: 500; font-size: 13px; color: #555;">Full Name:</label>
+                <input type="text" id="edit-name">
 
+                <label style="font-weight: 500; font-size: 13px; color: #555;">Email Address:</label>
+                <input type="email" id="edit-email">
 
-</header>
+                <label style="font-weight: 500; font-size: 13px; color: #555;">Phone Number:</label>
+                <input type="tel" id="edit-phone">
+            </div>
 
+            <div class="profile-actions">
+                <button class="btn-profile-edit" id="editSaveBtn" onclick="toggleEditProfile()">Edit Profile</button>
+                <button class="btn-profile-logout" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </section>
 
+    <footer>
+        <div class="footer-content">
+            <h2>STM Studio</h2>
+            <p>Premium fashion store for modern style</p>
+            <div class="footer-links">
+                <a href="../index.html">Home</a>
+                <a href="men.html">Men</a>
+                <a href="women.html">Women</a>
+                <a href="cart.html">Cart</a>
+            </div>
+            <div class="social">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+            </div>
+            <p>© 2026 STM Studio | All Rights Reserved</p>
+        </div>
+    </footer>
 
-<section class="products">
+    <script>
+        // Redirect check on page load
+        let loginState = localStorage.getItem("login");
+        if (loginState !== "true") {
+            alert("Please log in to view your profile.");
+            window.location.href = "login.html";
+        }
 
+        let user = JSON.parse(localStorage.getItem("user")) || {};
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
-<div class="product-card">
+        // Render profile data
+        function loadProfileData() {
+            document.getElementById("display-name").innerText = user.name || "N/A";
+            document.getElementById("display-email").innerText = user.email || "N/A";
+            document.getElementById("display-phone").innerText = user.phone || "N/A";
+            
+            // Calculate total quantity in cart
+            let totalCartQty = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+            document.getElementById("cart-count-profile").innerText = totalCartQty;
+            document.getElementById("wishlist-count-profile").innerText = wishlist.length;
+        }
 
+        loadProfileData();
 
-<h2>👤 User Profile</h2>
+        let isEditMode = false;
 
-<p id="username"></p>
+        function toggleEditProfile() {
+            let displaySection = document.getElementById("profileDisplay");
+            let editSection = document.getElementById("profileEditForm");
+            let btn = document.getElementById("editSaveBtn");
 
+            if (!isEditMode) {
+                // Populate inputs with current user data
+                document.getElementById("edit-name").value = user.name || "";
+                document.getElementById("edit-email").value = user.email || "";
+                document.getElementById("edit-phone").value = user.phone || "";
 
-<p id="email"></p>
+                displaySection.style.display = "none";
+                editSection.style.display = "block";
+                btn.innerText = "Save Changes";
+                btn.style.background = "#C9A227";
+                btn.style.color = "white";
+                btn.style.borderColor = "#C9A227";
+                isEditMode = true;
+            } else {
+                // Save actions
+                let newName = document.getElementById("edit-name").value.trim();
+                let newEmail = document.getElementById("edit-email").value.trim();
+                let newPhone = document.getElementById("edit-phone").value.trim();
 
-<a href="orders.html">
+                // Simple validations
+                if (!newName || !newEmail || !newPhone) {
+                    alert("All fields are required.");
+                    return;
+                }
+                
+                user.name = newName;
+                user.email = newEmail;
+                user.phone = newPhone;
 
-My Orders
+                localStorage.setItem("user", JSON.stringify(user));
+                
+                loadProfileData();
 
-</a>
-<p id="cart-count-profile"></p>
+                displaySection.style.display = "block";
+                editSection.style.display = "none";
+                btn.innerText = "Edit Profile";
+                btn.style.background = "#fff";
+                btn.style.color = "#111";
+                btn.style.borderColor = "#111";
+                isEditMode = false;
+                alert("Profile updated successfully!");
+                location.reload();
+            }
+        }
 
-<p id="wishlist-count-profile"></p>
-
-
-<button onclick="logout()">
-
-Logout
-
-</button>
-
-
-</div>
-
-
-</section>
-<script>
-
-
-let user =
-JSON.parse(localStorage.getItem("user"));
-
-
-
-if(user){
-
-
-document.getElementById("username").innerHTML =
-"Name : " + user.name;
-
-
-
-document.getElementById("email").innerHTML =
-"Email : " + user.email;
-
-
-}
-let cart =
-JSON.parse(localStorage.getItem("cart")) || [];
-
-
-let wishlist =
-JSON.parse(localStorage.getItem("wishlist")) || [];
-
-
-
-document.getElementById("cart-count-profile").innerHTML =
-"Cart Items : " + cart.length;
-
-
-
-document.getElementById("wishlist-count-profile").innerHTML =
-"Wishlist Items : " + wishlist.length;
-
-
-
-function logout(){
-
-
-alert("Logged out");
-
-
-localStorage.removeItem("login");
-
-
-window.location.href="../index.html";
-
-
-}
-
-
-</script>
+        function logout() {
+            alert("Logged out successfully.");
+            localStorage.removeItem("login");
+            window.location.href = "../index.html";
+        }
+    </script>
+    <script src="../script.js"></script>
 </body>
 </html>
-
-
